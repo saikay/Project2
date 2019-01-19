@@ -1,47 +1,47 @@
 // Get references to page elements
-var $exampleText = $("#example-text");
+var $searchInput = $("#search-bar");
 var $exampleDescription = $("#example-description");
-var $submitBtn = $("#submit");
+var $searchButton = $("#search-btn");
 var $exampleList = $("#example-list");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
-  saveExample: function(example) {
+  search: function($search) {
     return $.ajax({
       headers: {
         "Content-Type": "application/json"
       },
       type: "POST",
-      url: "api/examples",
-      data: JSON.stringify(example)
+      url: "api/ingredients",
+      data: JSON.stringify($search)
     });
   },
-  getExamples: function() {
+  getIngredient: function() {
     return $.ajax({
-      url: "api/examples",
+      url: "api/ingredients",
       type: "GET"
     });
   },
-  deleteExample: function(id) {
+  deleteIngredient: function(id) {
     return $.ajax({
-      url: "api/examples/" + id,
+      url: "api/ingredients/" + id,
       type: "DELETE"
     });
   }
 };
 
 // refreshExamples gets new examples from the db and repopulates the list
-var refreshExamples = function() {
-  API.getExamples().then(function(data) {
-    var $examples = data.map(function(example) {
+var refreshIngredients = function() {
+  API.getIngredient().then(function(data) {
+    var $ingredient = data.map(function(ingredient) {
       var $a = $("<a>")
-        .text(example.text)
-        .attr("href", "/example/" + example.id);
+        .text(ingredient.foodName)
+        .attr("href", "/ingredient/" + ingredient.id);
 
       var $li = $("<li>")
         .attr({
           class: "list-group-item",
-          "data-id": example.id
+          "data-id": ingredient.id
         })
         .append($a);
 
@@ -54,8 +54,8 @@ var refreshExamples = function() {
       return $li;
     });
 
-    $exampleList.empty();
-    $exampleList.append($examples);
+    $ingredientList.empty();
+    $ingredientList.append($ingredient);
   });
 };
 
@@ -64,13 +64,13 @@ var refreshExamples = function() {
 var handleFormSubmit = function(event) {
   event.preventDefault();
 
-  var example = {
-    text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
+  var search = {
+    foodName: $searchInput.val().trim(),
+    searchScore: search.searchScore + 1
   };
 
-  if (!(example.text && example.description)) {
-    alert("You must enter an example text and description!");
+  if (!search.foodName) {
+    alert("You must enter a search parameter!");
     return;
   }
 
@@ -90,7 +90,7 @@ var handleDeleteBtnClick = function() {
     .attr("data-id");
 
   API.deleteExample(idToDelete).then(function() {
-    refreshExamples();
+    refreshIngredients();
   });
 };
 
