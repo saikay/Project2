@@ -2,9 +2,13 @@
   <div class="container">
     <div class="row">
       <div class="col-8 offset-2">
-        <h1>{{msg}}</h1>
-        <h2>This is our Home Page!</h2>
-        <form class="clearfix mb-4" action="POST">
+        <div>
+          <h1>Fridge Frenzy</h1>
+        </div>
+        <div id="buttons">
+          <button id="signIn" class="btn btn-primary">Sign In</button><button id="newAccount" class="btn btn-primary">Create Account</button>
+        </div>
+        <form class="clearfix mb-4" id="signInSelected" action="POST">
           <div class="form-group">
             <label for="example-text">Example Text</label>
             <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
@@ -15,7 +19,6 @@
           </div>
           <button id="submit" class="btn btn-primary float-right">Submit</button>
         </form>
-        <h3>Examples:</h3>
         <ul id="example-list" class="list-group">
           {{#each examples}}
           <li data-id="{{this.id}}" class="list-group-item">
