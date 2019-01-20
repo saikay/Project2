@@ -1,4 +1,4 @@
-require("dotenv").config();
+
 var keys = require("./keys.js");
 
 function getRecipeData(yourSearch) {
@@ -17,8 +17,8 @@ function getRecipeData(yourSearch) {
             console.log(recipeURL);
             console.log(recipeId);
         }),
-        
-getRecipeData();
+
+        getRecipeData();
 
 
 
