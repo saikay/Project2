@@ -14,12 +14,15 @@
             <label for="example-text">Example Text</label>
             <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
           </div>
-          <div class="form-group">
+          {{!-- I tried looking at this but this section does not appear to do anything, can it be removed? --}}
+          {{!-- <div class="form-group">
             <label for="example-description">Example Description</label>
             <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
           </div>
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
+          <button id="submit" class="btn btn-primary float-right">Submit</button> --}}
         </form>
+        
+        {{!-- Comment by Case on Jan 20 at 10pm: For some reason this submit section is not working. I'm thinking maybe because it's not syncronous? --}}
         <div class="form-group" style="text-align: center">
           <br>
           <form action="/" method="post">

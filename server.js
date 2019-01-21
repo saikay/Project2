@@ -1,4 +1,4 @@
-// Case's Temporary Key (for beta tesitng)
+// Temporary Key (for testing)
 // intialize food2fork api key
 const API_KEY = 'b1727ca13adcac54b9fcd530786a7393';
 // !! Please remove the above key ^^ and transfer to .env as soon as possible !! //
@@ -7,11 +7,11 @@ const API_KEY = 'b1727ca13adcac54b9fcd530786a7393';
 require("dotenv").config();
 
 // Javascript initialize modules
-// Body parser and request, used by Case for API call functionality
+// Body parser and request, used for API call functionality
 const bodyParser = require('body-parser');
 const request = require('request');
 
-// Case's test directory services
+// test directory services
 // directory of URLS
 const directory = ["/", "/recipes", "/recipes.html", "/index.html"];
 
@@ -21,9 +21,7 @@ var exphbs = require("express-handlebars");
 
 // Require keys from .env
 var keys = require("./keys.js");
-
 var path = require("path");
-
 var db = require("./models");
 
 var app = express();
