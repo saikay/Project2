@@ -40,28 +40,34 @@ function showPassword() {
   }
 }
 
-function showPassword2() {
-  var x = document.getElementById("pwResult");
-  if (x.type === "password") {
-    x.type= "text";
-  }else {
-    x.type = "password";
-  }
-}
-
 //Show Create Account Form
-$("#newAccount").click(function(){$("#companyName, #buttons").addClass("hidden");});
-$("#newAccount").click(function(){$("#newAccountForm, #setupAccountTitle").removeClass("hidden");});
+
+$(".newAccount").click(function(e){
+  $("#companyName, #buttons").addClass("hidden");
+  $("#newAccountForm, #setupAccountTitle").removeClass("hidden");
+});
 
 //Show Sign In Form
-$("#signIn").click(function(){$("#companyName, #buttons").addClass("hidden");});
-$("#signIn").click(function(){$("#signInForm, #signInTitle").removeClass("hidden");});
-
+$(".signIn").click(function(e)
+{
+  $(
+    "#companyName, #buttons, .firstName, .lastName, .emailInput, #setupAccountTitle"
+  ).addClass("hidden");
+  $("#newAccountForm, #signInTitle").removeClass("hidden");
+});
 
 //Show Home page if you click cancel on the create account page
-$("#signInCancelButton").click(function(){$("#companyName, #buttons").removeClass("hidden");});
-$("#signInCancelButton").click(function(){$("#newAccountForm, #setupAccountTitle").addClass("hidden");});
+$("#signInCancelButton").click(function(e){
+  e.preventDefault();
+  $("#companyName, #buttons, .firstName, .lastName, .emailInput").removeClass(
+    "hidden"
+  );
 
+  $("#newAccountForm, #setupAccountTitle, #signInForm, #signInTitle").addClass(
+    "hidden"
+  );
+  document.getElementById("newAccountForm").reset();
+});
 
 // refreshExamples gets new examples from the db and repopulates the list
 var refreshIngredients = function() {
