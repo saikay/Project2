@@ -5,7 +5,7 @@
   },
   "test": {
     "username": "root",
-    "password": "Angel247192",
+    "password": "",
     "database": "testdb",
     "host": "localhost",
     "dialect": "mysql",
