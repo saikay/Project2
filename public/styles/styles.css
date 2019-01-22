@@ -43,7 +43,7 @@ form {
   position: relative;
 }
 
-#submit, #cancelButton, #signInCancelButton, #signInButton{
+#submit, #cancelButton, #signInCancelButton, #sign{
   background-color: black;
   border: none;
   margin-right: 10px;
