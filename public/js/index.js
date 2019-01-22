@@ -50,6 +50,7 @@ function showPassword2() {
   }
 }
 
+//Contructor lets us easily access ids and classes
 var Hook = function () {
   this.signIn = $(".signIn");
   this.signUp = $(".signUp");
@@ -75,12 +76,14 @@ var Hook = function () {
   };
   return this;
 };
-
+//Initialize constructor
 var hook = new Hook();
 
+//Listener for any button click
 hook.button.on("click", function (e) {
   e.preventDefault();
   var b = $(this);
+  //using switch to decide the functionality of each button
   switch (b.attr("id")) {
     case "signIn":
       showForm(true);
@@ -97,6 +100,8 @@ hook.button.on("click", function (e) {
       break;
     case "cancelButton":
       hook.hide(hook.form);
+      hook.hide(hook.signInT);
+      hook.hide(hook.signUpT);
       hook.show(hook.main);
       break;
 
@@ -112,12 +117,14 @@ var showForm = function (bool) {
       .html("Sign In")
       .attr("data-form", 1)
     hook.show(hook.signIn);
+    hook.show(hook.signInT);
     hook.hide(hook.signUp);
     hook.hide(hook.signUpT);
   } else {
     hook.sign
-      .html("sign Up")
+      .html("Sign Up")
       .attr("data-form", 0)
+    hook.show(hook.signUpT)
     hook.show(hook.signUp);
     hook.hide(hook.signInT);
   }

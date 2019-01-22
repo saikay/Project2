@@ -72,3 +72,8 @@ form {
   display: none;
 }
 
+.element {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+}
