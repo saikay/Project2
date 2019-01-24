@@ -12,7 +12,7 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   Recipe.associate = function(models) {
-    Recipe.hasMany(models.Post, {
+    Recipe.hasMany(models.Favorite, {
       onDelete: "cascade"
     });
   };
