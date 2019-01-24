@@ -3,10 +3,7 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-<<<<<<< HEAD
-=======
     // console.log(db);
->>>>>>> 24a77272af257cfca49d8c6c6754f18a4a848d57
     db.Recipe.findAll({}).then(function(dbRecipes) {
       res.render("index", {
         msg: "Welcome!",
@@ -16,10 +13,7 @@ module.exports = function(app) {
   });
 
   app.get("/account", function(req, res) {
-<<<<<<< HEAD
-=======
     // console.log(db);
->>>>>>> 24a77272af257cfca49d8c6c6754f18a4a848d57
     db.Recipe.findAll({}).then(function(dbRecipes) {
       res.render("account", {
         msg: "Welcome!",
@@ -29,20 +23,14 @@ module.exports = function(app) {
   });
 
   app.get("/account", function(req, res) {
-<<<<<<< HEAD
-=======
     // console.log(db);
->>>>>>> 24a77272af257cfca49d8c6c6754f18a4a848d57
     db.Recipe.findAll({}).then(function(dbRecipes) {
       res.render("account");
     });
   });
 
   app.get("/favorites", function(req, res) {
-<<<<<<< HEAD
-=======
     // console.log(db);
->>>>>>> 24a77272af257cfca49d8c6c6754f18a4a848d57
     db.Recipe.findAll({}).then(function(dbRecipes) {
       res.render("favorites");
     });

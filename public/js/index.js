@@ -110,18 +110,6 @@ var showForm = function (bool) {
   }
 };
 
-<<<<<<< HEAD
-=======
-
-//Show Sign In Form
-$(".signIn").click(function (e) {
-  $(
-    "#companyName, #buttons, .firstName, .lastName, .emailInput, #setupAccountTitle"
-  ).addClass("hidden");
-  $("#newAccountForm, #signInTitle").removeClass("hidden");
-});
-
->>>>>>> 24a77272af257cfca49d8c6c6754f18a4a848d57
 // refreshExamples gets new examples from the db and repopulates the list
 var refreshIngredients = function () {
   API.getIngredient().then(function (data) {
