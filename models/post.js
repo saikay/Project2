@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  var Post = sequelize.define("Post", {
+  var Favorite = sequelize.define("Favorite", {
     recipeName: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -23,5 +23,5 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-  return Post;
+  return Favorite;
 };
