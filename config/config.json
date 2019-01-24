@@ -6,7 +6,7 @@
   "test": {
     "username": "root",
     "password": "superj2003",
-    "database": "testdb",
+    "database": "dbfood",
     "host": "localhost",
     "dialect": "mysql",
     "logging": false
