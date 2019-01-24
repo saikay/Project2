@@ -5,7 +5,7 @@
   },
   "test": {
     "username": "root",
-    "password": "Angel247192",
+    "password": "superj2003",
     "database": "dbfood",
     "host": "localhost",
     "dialect": "mysql",
@@ -16,3 +16,4 @@
     "dialect": "mysql"
   }
 }
+
