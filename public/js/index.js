@@ -41,6 +41,7 @@ function showPassword() {
   }
 }
 
+
 function showPassword2() {
   var x = document.getElementById("pwResult");
   if (x.type === "password") {
@@ -102,7 +103,14 @@ var showForm = function (bool) {
 };
 
 
-
+//Show Sign In Form
+$(".signIn").click(function(e)
+{
+  $(
+    "#companyName, #buttons, .firstName, .lastName, .emailInput, #setupAccountTitle"
+  ).addClass("hidden");
+  $("#newAccountForm, #signInTitle").removeClass("hidden");
+});
 
 // refreshExamples gets new examples from the db and repopulates the list
 var refreshIngredients = function () {

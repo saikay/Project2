@@ -5,6 +5,7 @@
         <div class="mainView" id="companyName">
           <h1>Fridge Frenzy</h1>
         </div>
+
         <div class="hidden" id="setupAccountTitle" class="hidden">
           <h1 class="setupAccount">Setup Account</h1>
         </div>
@@ -14,12 +15,14 @@
         <div class="mainView" id="buttons">
           <button id="signIn" class="btn btn-primary">Sign In</button>
           <button id="newAccount" class="btn btn-primary">Create Account</button>
+
         </div>
         
 
         <!-- Create Account Form -->
         <form class="clearfix mb-4 hidden" id="newAccountForm" action="POST">
          
+
           <div class="form-group signUp">
             <label for="first-name" id="firstNameTitle">First Name</label>
             <input type="text" id="firstNameInput" class="form-control" aria-describedby="example-text" placeholder="John">
@@ -37,15 +40,16 @@
             <input type="text" class="form-control" id="userNameInput" aria-describedby="example-description" placeholder="username">
           </div>
           <div class="form-group signIn">
+
             <label for="password">Password</label>  
             <input type="password" class="form-control" id="pwInput" aria-describedby="example-description" placeholder="password"><br>
             <input type="checkbox" onclick="showPassword()">Show Password
           </div>
+
           <button id="sign" class="btn btn-primary">Sign Up</button>
           <button id="cancelButton" class="btn btn-primary">Cancel</button>
         </form>
-         <!-- Sign In Form -->
-  
+
         <ul id="example-list" class="list-group">
           {{#each examples}}
           <li data-id="{{this.id}}" class="list-group-item">
