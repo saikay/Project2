@@ -5,6 +5,14 @@ var $exampleDescription = $("#example-description");
 var $searchButton = $("#search-btn");
 var $exampleList = $("#example-list");
 
+$searchButton.on("click", function () {
+  // Grab search data input element.val()
+
+  $.get("/api/recipies", function (data) {
+    console.log(data)
+  });
+});
+
 // The API object contains methods for each kind of request we'll make
 var API = {
   search: function ($search) {
@@ -104,8 +112,7 @@ var showForm = function (bool) {
 
 
 //Show Sign In Form
-$(".signIn").click(function(e)
-{
+$(".signIn").click(function (e) {
   $(
     "#companyName, #buttons, .firstName, .lastName, .emailInput, #setupAccountTitle"
   ).addClass("hidden");

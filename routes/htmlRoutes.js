@@ -3,7 +3,7 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    console.log(db);
+    // console.log(db);
     db.Recipe.findAll({}).then(function(dbRecipes) {
       res.render("index", {
         msg: "Welcome!",
@@ -13,7 +13,7 @@ module.exports = function(app) {
   });
 
   app.get("/account", function(req, res) {
-    console.log(db);
+    // console.log(db);
     db.Recipe.findAll({}).then(function(dbRecipes) {
       res.render("account", {
         msg: "Welcome!",
@@ -23,14 +23,14 @@ module.exports = function(app) {
   });
 
   app.get("/account", function(req, res) {
-    console.log(db);
+    // console.log(db);
     db.Recipe.findAll({}).then(function(dbRecipes) {
       res.render("account");
     });
   });
 
   app.get("/favorites", function(req, res) {
-    console.log(db);
+    // console.log(db);
     db.Recipe.findAll({}).then(function(dbRecipes) {
       res.render("favorites");
     });
