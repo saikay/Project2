@@ -2,63 +2,54 @@
   <div class="container">
     <div class="row">
       <div class="col-8 offset-2">
-        <div id="companyName">
+        <div class="mainView" id="companyName">
           <h1>Fridge Frenzy</h1>
         </div>
-        <!-- Title for Setup Account section -->
-        <div id="setupAccountTitle" class="hidden">
-          <h1 class="setupAccount">Create Account</h1>
+
+        <div class="hidden" id="setupAccountTitle" class="hidden">
+          <h1 class="setupAccount">Setup Account</h1>
         </div>
-        <!-- Title for sign in section -->
-        <div id="signInTitle" class="hidden">
+        <div class="hidden" id="signInTitle" class="hidden">
           <h1 class="setupAccount">Sign In</h1>
         </div>
-        <!-- Buttons on home page -->
-        <div id="buttons">
-          <button id="signIn" class="btn btn-primary signIn">Sign In</button><button id="newAccount" class="btn btn-primary newAccount">Create Account</button>
+        <div class="mainView" id="buttons">
+          <button id="signIn" class="btn btn-primary">Sign In</button>
+          <button id="newAccount" class="btn btn-primary">Create Account</button>
+
         </div>
+        
 
         <!-- Create Account Form -->
-        <form class="clearfix mb-4 createAccount hidden" id="newAccountForm" action="POST">
+        <form class="clearfix mb-4 hidden" id="newAccountForm" action="POST">
          
-          <div class="form-group firstName">
+
+          <div class="form-group signUp">
             <label for="first-name" id="firstNameTitle">First Name</label>
             <input type="text" id="firstNameInput" class="form-control" aria-describedby="example-text" placeholder="John">
           </div>
-          <div class="form-group lastName">
+          <div class="form-group signUp">
             <label for="last-name" id="lastNameTitle">Last Name</label>
             <input type="text" id="lastNameInput" class="form-control" aria-describedby="example-text" placeholder="Doe">
           </div>
-          <div class="form-group emailInput">
+          <div class="form-group signUp">
             <label for="email" id="emailTitle">Email</label>
             <input type="text" id="emailInput" class="form-control" aria-describedby="example-text" placeholder="email@domain.com">
           </div>
-          <div class="form-group userName">
+          <div class="form-group signIn">
             <label for="userNameTitle">User Name</label>
             <input type="text" class="form-control" id="userNameInput" aria-describedby="example-description" placeholder="username">
           </div>
-          <div class="form-group passwordInput">
+          <div class="form-group signIn">
+
             <label for="password">Password</label>  
             <input type="password" class="form-control" id="pwInput" aria-describedby="example-description" placeholder="password"><br>
             <input type="checkbox" onclick="showPassword()">Show Password
           </div>
-          <button id="submit" class="btn btn-primary">Submit</button><button id="signInCancelButton" class="btn btn-primary">Cancel</button>
+
+          <button id="sign" class="btn btn-primary">Sign Up</button>
+          <button id="cancelButton" class="btn btn-primary">Cancel</button>
         </form>
 
-         <!-- Sign In Form -->
-        {{!-- <form class="clearfix mb-4 signIn hidden" id="signInForm" action="POST">
-         
-          <div class="form-group">
-            <label for="userNameTitle">User Name</label>
-            <input type="text" class="form-control" id="userNameResult" aria-describedby="example-description" placeholder="username">
-          </div>
-          <div class="form-group">
-            <label for="password">Password</label>  
-            <input type="password" class="form-control" id="pwResult" aria-describedby="example-description" placeholder="password"><br>
-            <input type="checkbox" onclick="showPassword2()">Show Password
-          </div>
-          <button id="signInButton" class="btn btn-primary">Submit</button><button id="signInCancelButton" class="btn btn-primary">Cancel</button>
-        </form> --}}
         <ul id="example-list" class="list-group">
           {{#each examples}}
           <li data-id="{{this.id}}" class="list-group-item">
@@ -73,4 +64,7 @@
 </div>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/js/hook.js"></script>
 <script src="/js/index.js"></script>
+<script src="/js/firebase.js"></script>
+<script src="/js/createQuery.js"></script>

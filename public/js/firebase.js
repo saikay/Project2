@@ -1,5 +1,6 @@
-var user = require("../../config/connection.js")
+import { thisUser } from "../../config/connection";
 
+let user = thisUser();
 const $userEmail = $("#user-email").val().trim();
 const $userName = $("#user-name").val().trim();
 const $userPass = $("#user-password").val().trim();
