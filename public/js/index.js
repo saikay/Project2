@@ -5,6 +5,14 @@ var $exampleDescription = $("#example-description");
 var $searchButton = $("#search-btn");
 var $exampleList = $("#example-list");
 
+$searchButton.on("click", function () {
+  // Grab search data input element.val()
+
+  $.get("/api/recipies", function (data) {
+    console.log(data)
+  });
+});
+
 // The API object contains methods for each kind of request we'll make
 var API = {
   search: function ($search) {
@@ -102,6 +110,18 @@ var showForm = function (bool) {
   }
 };
 
+<<<<<<< HEAD
+=======
+
+//Show Sign In Form
+$(".signIn").click(function (e) {
+  $(
+    "#companyName, #buttons, .firstName, .lastName, .emailInput, #setupAccountTitle"
+  ).addClass("hidden");
+  $("#newAccountForm, #signInTitle").removeClass("hidden");
+});
+
+>>>>>>> 24a77272af257cfca49d8c6c6754f18a4a848d57
 // refreshExamples gets new examples from the db and repopulates the list
 var refreshIngredients = function () {
   API.getIngredient().then(function (data) {

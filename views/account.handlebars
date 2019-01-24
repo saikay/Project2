@@ -16,6 +16,7 @@
       </ul>
     </div>
   </nav>
+<<<<<<< HEAD
 <div class="container">
   <div class="row">
     <div class="col-8 offset-2">
@@ -29,11 +30,52 @@
           </div>
           <button id="submit" class="btn btn-primary">Submit</button>
         </form>
+=======
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-10">
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="card mb-4">
+          <div class="card-header">
+            <h3><strong>Recipe Search</strong></h3>
+          </div>
+          <div class="card-body">
+            <input type="text" id="search-bar" class="form-control">
+            <br>
+            <div class="text-right">
+              <button type="submit" class="btn btn-primary btn-md" id="search-btn"><span class="fa fa-search"></span>
+                Input Three Ingredients.</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-8 offset-2">
+          <ul id="example-list" class="list-group">
+            {{#each examples}}
+            <li data-id="{{this.id}}" class="list-group-item">
+              <a href="example/{{this.id}}">{{this.text}}</a>
+              <button class="btn btn-danger float-right delete">ｘ</button>
+            </li>
+            {{/each}}
+          </ul>
+        </div>
+>>>>>>> 24a77272af257cfca49d8c6c6754f18a4a848d57
       </div>
     </div>
   </div>
-</div>
 
+<<<<<<< HEAD
 {{!-- <div class="col-8 offset-2">
   <ul id="example-list" class="list-group">
     {{#each examples}}
@@ -48,3 +90,9 @@
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>
+=======
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="/js/hook.js"></script>
+  <script src="/js/index.js"></script>
+  
+>>>>>>> 24a77272af257cfca49d8c6c6754f18a4a848d57
