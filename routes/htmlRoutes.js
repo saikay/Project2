@@ -12,6 +12,29 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/account", function(req, res) {
+    console.log(db);
+    db.Recipe.findAll({}).then(function(dbRecipes) {
+      res.render("account", {
+        msg: "Welcome!",
+        examples: dbRecipes
+      });
+    });
+  });
+
+  app.get("/account", function(req, res) {
+    console.log(db);
+    db.Recipe.findAll({}).then(function(dbRecipes) {
+      res.render("account");
+    });
+  });
+
+  app.get("/favorites", function(req, res) {
+    console.log(db);
+    db.Recipe.findAll({}).then(function(dbRecipes) {
+      res.render("favorites");
+    });
+  });
   // // Load example page and pass in an example by id
   // app.get("/example/:id", function(req, res) {
   //   db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
@@ -22,7 +45,7 @@ module.exports = function(app) {
   // });
 
   // Render 404 page for any unmatched routes
-  app.get("*", function(req, res) {
-    res.render("404");
-  });
+  // app.get("*", function(req, res) {
+  //   res.render("404");
+  // });
 };
