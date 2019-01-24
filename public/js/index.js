@@ -63,8 +63,8 @@ var Hook = function () {
   this.pass = $("#pwInput").val().trim();
   this.form = $("#newAccountForm");
   this.main = $(".mainView");
-  this.signUpT = $("#setupAccountTitle")
-  this.signInT = $("#signInTitle")
+  this.signUpT = $("#setupAccountTitle");
+  this.signInT = $("#signInTitle");
 
   this.show = (arg) => {
     arg.removeClass("hidden");
