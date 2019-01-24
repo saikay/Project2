@@ -50,35 +50,6 @@ function showPassword2() {
   }
 }
 
-//Contructor lets us easily access ids and classes
-var Hook = function () {
-  this.signIn = $(".signIn");
-  this.signUp = $(".signUp");
-  this.sign = $("#sign");
-  this.button = $("body button");
-  this.first = $("#firstNameInput").val().trim();
-  this.last = $("#lastNameInput").val().trim();
-  this.email = $("#emailInput").val().trim();
-  this.user = $("#userNameInput").val().trim();
-  this.pass = $("#pwInput").val().trim();
-  this.form = $("#newAccountForm");
-  this.main = $(".mainView");
-  this.signUpT = $("#setupAccountTitle");
-  this.signInT = $("#signInTitle");
-
-  this.show = (arg) => {
-    arg.removeClass("hidden");
-    return arg;
-  };
-  this.hide = (arg) => {
-    arg.addClass("hidden");
-    return arg;
-  };
-  return this;
-};
-//Initialize constructor
-var hook = new Hook();
-
 //Listener for any button click
 hook.button.on("click", function (e) {
   e.preventDefault();

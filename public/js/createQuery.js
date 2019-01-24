@@ -1,6 +1,6 @@
 const $searchInput = $("#search-bar").val().trim();
 const $searchButton = $("#search-btn");
-var queryString;
+const queryString;
 
 const breakDown = (arg) => {
     arg.split(" ").join(",");
@@ -12,4 +12,3 @@ $($searchButton).on("click", function(event){
     queryString = breakDown($searchInput);
 });
 
-module.exports = queryString;
