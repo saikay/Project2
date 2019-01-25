@@ -1,24 +1,25 @@
 var db = require("../models");
 
-module.exports = function (app) {
-  // Get all Food
-  app.get("/api/recipes", function (req, res) {
-    db.Food.findAll({}).then(function (dbFoods) {
-      res.json(dbFoods);
+module.exports = function(app) {
+  // Get all Favorite Recipes by UserId
+  // Need to define recipeFavs, use a descriptive endpoint
+  app.get("/api/favorites?=:userName", function(req, res) {
+    db.Recipe.findAll({}).then(function(recipeFavs) {
+      res.json(recipeFavs);
     });
   });
 
-  // Create a new Food
-  app.post("/api/recipes", function (req, res) {
-    db.Food.create(req.body).then(function (dbFood) {
-      res.json(dbFood);
+  // Add a favorite Recipe
+  app.post("/api/favorites", function(req, res) {
+    db.Recipe.create(req.body).then(function(recipeFavs) {
+      res.json(recipeFavs);
     });
   });
 
-  // Delete Food by id
-  app.delete("/api/recipes/:id", function (req, res) {
-    db.Food.destroy({ where: { id: req.params.id } }).then(function (dbFood) {
-      res.json(dbFood);
+  // Delete Food by recipeID
+  app.delete("/api/favorites", function(req, res) {
+    db.Recipe.destroy({ where: { id: req.params.body } }).then(function(recipeFavs) {
+      res.json(recipeFavs);
     });
   });
 
