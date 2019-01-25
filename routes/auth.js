@@ -16,13 +16,17 @@ module.exports = function (app) {
 
     app.get('/logout', authController.logout);
 
-
     app.post('/signin', passport.authenticate('local-signin', {
         successRedirect: '/account',
         failureRedirect: '/'
     }
     ));
 
+    app.post('/logout', passport.authenticate('local-signin', {
+        successRedirect: '/',
+        failureRedirect: '/account'
+    }
+    ));
     function isLoggedIn(req, res, next) {
         if (req.isAuthenticated())
             return next();
