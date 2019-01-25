@@ -1,9 +1,10 @@
 var db = require("../models");
 
-module.exports = function(app) {
+module.exports = function (app) {
   // Load index page
-  app.get("/", function(req, res) {
-    db.Recipe.findAll({}).then(function(dbRecipes) {
+  app.get("/", function (req, res) {
+    // console.log(db);
+    db.Recipe.findAll({}).then(function (dbRecipes) {
       res.render("index", {
         msg: "Welcome!",
         example: dbRecipes
@@ -11,8 +12,9 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/account", function(req, res) {
-    db.Recipe.findAll({}).then(function(dbRecipes) {
+  app.get("/account", function (req, res) {
+    // console.log(db);
+    db.Recipe.findAll({}).then(function (dbRecipes) {
       res.render("account", {
         msg: "Welcome!",
         examples: dbRecipes
@@ -20,14 +22,16 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/account", function(req, res) {
-    db.Recipe.findAll({}).then(function(dbRecipes) {
+  app.get("/account", function (req, res) {
+    // console.log(db);
+    db.Recipe.findAll({}).then(function (dbRecipes) {
       res.render("account");
     });
   });
 
-  app.get("/favorites", function(req, res) {
-    db.Recipe.findAll({}).then(function(dbRecipes) {
+  app.get("/favorites", function (req, res) {
+    // console.log(db);
+    db.Recipe.findAll({}).then(function (dbRecipes) {
       res.render("favorites");
     });
   });
