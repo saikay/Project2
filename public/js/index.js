@@ -61,24 +61,19 @@ function showPassword2() {
 
 //Listener for any button click
 hook.button.on("click", function (e) {
-  e.preventDefault();
   var b = $(this);
   //using switch to decide the functionality of each button
   switch (b.attr("id")) {
     case "signIn":
+      e.preventDefault();
       showForm(true);
       break;
     case "newAccount":
+      e.preventDefault();
       showForm(false);
       break;
-    case "sign":
-      if (b.data("form") === 0) {
-        //create account
-      } else {
-        //sign in
-      }
-      break;
     case "cancelButton":
+      e.preventDefault();
       hook.hide(hook.form);
       hook.hide(hook.signInT);
       hook.hide(hook.signUpT);
@@ -96,6 +91,12 @@ var showForm = function (bool) {
     hook.sign
       .html("Sign In")
       .attr("data-form", 1)
+    hook.form
+      .attr({
+        id: "signin",
+        name: "signin",
+        action: "signin"
+      })
     hook.show(hook.signIn);
     hook.show(hook.signInT);
     hook.hide(hook.signUp);
@@ -104,6 +105,12 @@ var showForm = function (bool) {
     hook.sign
       .html("Sign Up")
       .attr("data-form", 0)
+    hook.form
+      .attr({
+        id: "signup",
+        name: "signup",
+        action: "signup"
+      });
     hook.show(hook.signUpT)
     hook.show(hook.signUp);
     hook.hide(hook.signInT);

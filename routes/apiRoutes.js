@@ -24,13 +24,13 @@ module.exports = function (app) {
 
   app.get("/api/recipes", function (req, res) {
     unirest.get("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?number=5&ranking=2&ingredients=" + ingredient1 + "%2C" + ingredient2 + "%2C" + ingredient3)
-    .header("X-RapidAPI-Key", "0dLFzw4TjNmshzQG9xezksktSXbEp1QtQtdjsnAd8FlOiv9etx")
-    .end(function (result) {
+      .header("X-RapidAPI-Key", "0dLFzw4TjNmshzQG9xezksktSXbEp1QtQtdjsnAd8FlOiv9etx")
+      .end(function (result) {
 
-      // Output resulting JSON to console
-      res.send(result)
-    });
-  })
+        // Output resulting JSON to console
+        res.send(result)
+      });
+  });
 };
 
 
