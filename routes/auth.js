@@ -16,7 +16,6 @@ module.exports = function (app) {
 
     app.get('/logout', authController.logout);
 
-
     app.post('/signin', passport.authenticate('local-signin', {
         successRedirect: '/account',
         failureRedirect: '/'
