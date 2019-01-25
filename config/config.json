@@ -5,8 +5,8 @@
   },
   "test": {
     "username": "root",
-    "password": "Angel247192",
-    "database": "dbfood",
+    "password": "password",
+    "database": "recipe_db",
     "host": "localhost",
     "dialect": "mysql",
     "logging": false
