@@ -65,7 +65,7 @@ form {
   border-radius: 10px;
 }
 
-#submit, #cancelButton, #signInCancelButton, #sign{
+#cancelButton, #signInCancelButton, #sign{
   background-color: black;
   border: none;
   margin-right: 10px;
@@ -81,7 +81,7 @@ form {
   font-size: 20px;
 }
 
-#signIn:hover, #signInButton:hover, #newAccount:hover, #submit:hover, #signInCancelButton:hover, #cancelButton:hover  {
+#signIn:hover, #signInButton:hover, #newAccount:hover, #sign:hover, #signInCancelButton:hover, #cancelButton:hover  {
   -moz-transition: all .2s ease-in;
     -o-transition: all .2s ease-in;
     -webkit-transition: all .2s ease-in;
