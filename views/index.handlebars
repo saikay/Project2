@@ -20,33 +20,33 @@
         
 
         <!-- Create Account Form -->
-        <form class="clearfix mb-4 hidden" id="newAccountForm" action="POST">
+        <form class="clearfix mb-4 newAccountForm hidden" id="" method="post">
          
 
           <div class="form-group signUp">
             <label for="first-name" id="firstNameTitle">First Name</label>
-            <input type="text" id="firstNameInput" class="form-control" aria-describedby="example-text" placeholder="John">
+            <input type="text" id="firstNameInput" name="firstname" class="form-control" aria-describedby="example-text" placeholder="John">
           </div>
           <div class="form-group signUp">
             <label for="last-name" id="lastNameTitle">Last Name</label>
-            <input type="text" id="lastNameInput" class="form-control" aria-describedby="example-text" placeholder="Doe">
-          </div>
-          <div class="form-group signUp">
-            <label for="email" id="emailTitle">Email</label>
-            <input type="text" id="emailInput" class="form-control" aria-describedby="example-text" placeholder="email@domain.com">
+            <input type="text" id="lastNameInput" name="lastname" class="form-control" aria-describedby="example-text" placeholder="Doe">
           </div>
           <div class="form-group signIn">
+            <label for="email" id="emailTitle">Email</label>
+            <input type="email" id="emailInput" name="email" class="form-control" aria-describedby="example-text" placeholder="email@domain.com">
+          </div>
+          <div class="form-group signUp">
             <label for="userNameTitle">User Name</label>
-            <input type="text" class="form-control" id="userNameInput" aria-describedby="example-description" placeholder="username">
+            <input type="text" name="username" class="form-control" id="userNameInput" aria-describedby="example-description" placeholder="username">
           </div>
           <div class="form-group signIn">
 
             <label for="password">Password</label>  
-            <input type="password" class="form-control" id="pwInput" aria-describedby="example-description" placeholder="password"><br>
+            <input type="password" name="password" class="form-control" id="pwInput" aria-describedby="example-description" placeholder="password"><br>
             <input type="checkbox" onclick="showPassword()">Show Password
           </div>
 
-          <button id="sign" class="btn btn-primary">Sign Up</button>
+          <button id="sign" type="submit" class="btn btn-primary">Sign Up</button>
           <button id="cancelButton" class="btn btn-primary">Cancel</button>
         </form>
 
