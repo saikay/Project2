@@ -29,6 +29,7 @@ module.exports = function (passport, user) {
                     {
                         email: email,
                         password: userPassword,
+                        username: req.body.username,
                         firstname: req.body.firstname,
                         lastname: req.body.lastname
                     };
@@ -83,6 +84,7 @@ module.exports = function (passport, user) {
             });
         }
     ));
+
     //serialize
     passport.serializeUser(function (user, done) {
         done(null, user.id);
