@@ -4,7 +4,7 @@ module.exports = function (app) {
   // Load index page
   app.get("/", function (req, res) {
     // console.log(db);
-    db.Recipe.findAll({}).then(function (dbRecipes) {
+    db.Favorite.findAll({}).then(function (dbRecipes) {
       res.render("index", {
         msg: "Welcome!",
         example: dbRecipes
@@ -14,7 +14,7 @@ module.exports = function (app) {
 
   app.get("/account", function (req, res) {
     // console.log(db);
-    db.Recipe.findAll({}).then(function (dbRecipes) {
+    db.Favorite.findAll({}).then(function (dbRecipes) {
       res.render("account", {
         msg: "Welcome!",
         examples: dbRecipes
@@ -24,14 +24,14 @@ module.exports = function (app) {
 
   app.get("/account", function (req, res) {
     // console.log(db);
-    db.Recipe.findAll({}).then(function (dbRecipes) {
+    db.Favorite.findAll({}).then(function (dbRecipes) {
       res.render("account");
     });
   });
 
   app.get("/favorites", function (req, res) {
     // console.log(db);
-    db.Recipe.findAll({}).then(function (dbRecipes) {
+    db.Favorite.findAll({}).then(function (dbRecipes) {
       res.render("favorites");
     });
   });

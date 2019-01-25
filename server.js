@@ -38,15 +38,6 @@ app.engine(
   })
 );
 app.set("view engine", "handlebars");
-
-
-app.listen(5000, function(err) {
-
-  if (!err)
-      console.log("Site is live");
-  else console.log(err)
-
-});
  
 // Routes
 require("./routes/apiRoutes")(app);

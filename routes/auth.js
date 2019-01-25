@@ -22,6 +22,8 @@ module.exports = function (app) {
     }
     ));
 
+
+
     function isLoggedIn(req, res, next) {
         if (req.isAuthenticated())
             return next();

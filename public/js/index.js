@@ -1,17 +1,5 @@
 
-// Get references to page elements
-var $searchInput = $("#search-bar");
-var $exampleDescription = $("#example-description");
-var $searchButton = $("#search-btn");
-var $exampleList = $("#example-list");
 
-$searchButton.on("click", function () {
-  // Grab search data input element.val()
-
-  $.get("/api/recipies", function (data) {
-    console.log(data)
-  });
-});
 
 // The API object contains methods for each kind of request we'll make
 var API = {
@@ -79,10 +67,19 @@ hook.button.on("click", function (e) {
       hook.hide(hook.signUpT);
       hook.show(hook.main);
       break;
-
+    case "search-btn":
+      e.preventDefault();
+      const queryString = breakDown(hook.search);
+      break;
   }
 })
 //form showing funciton true = signIn, false = signUp
+
+const breakDown = (arg) => {
+    arg.split(" ").join(",");
+    return arg;
+}
+
 var showForm = function (bool) {
   hook.show(hook.form);
   hook.hide(hook.main);
