@@ -12,6 +12,10 @@ module.exports = function (app) {
     });
   });
 
+  app.get("/logout", function (req, res) {
+    res.render("index");
+  })
+
   app.get("/account", function (req, res) {
     // console.log(db);
     db.Favorite.findAll({}).then(function (dbRecipes) {

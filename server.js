@@ -9,6 +9,7 @@ var session = require("express-session");
 var bodyParser = require('body-parser');
 var PORT = process.env.PORT || 3000;
 
+app.enable('trust proxy');
 //For BodyParser
 app.use(bodyParser.urlencoded({
   extended: true
