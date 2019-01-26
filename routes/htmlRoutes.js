@@ -46,7 +46,7 @@ module.exports = function (app) {
     console.log(req.query)
     console.log("Get route worked again")
     unirest.get("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?number=9&ranking=2&ingredients=" + data)
-      .header("X-RapidAPI-Key", "c0bzjWX8fAmshbfX60hFp9Qltc45p1ydS0xjsnUs5qqvJ2QMVG")
+      .header("X-RapidAPI-Key", process.env.SPOON_KEY)
       .end(function (result) {
         console.log(result.body)
         res.render("search", result.body);
