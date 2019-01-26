@@ -47,6 +47,7 @@ function showPassword2() {
   }
 }
 
+var queryData = [];
 //Listener for any button click
 hook.button.on("click", function (e) {
   var b = $(this);
@@ -68,16 +69,35 @@ hook.button.on("click", function (e) {
       hook.show(hook.main);
       break;
     case "search-btn":
-      e.preventDefault();
-      const queryString = breakDown(hook.search);
+      // e.preventDefault();
+      // const queryString = breakDown($("#search-bar").val().trim());
+      // window.location.href = "/search/?search=" + queryString;
+      // $.ajax({
+      //   url: "/search/" + queryString,
+      //   type: "GET"
+      // }).then(function(data){
+        
+        // $.ajax({
+        //   url: "/search",
+        //   type: "POST",
+        //   data: {
+        //     arr: data
+        //   },
+        //   success: function(data) {
+        //     console.log(data);
+        //   }
+        // })
+      // })
       break;
   }
 })
 //form showing funciton true = signIn, false = signUp
 
+
+
 const breakDown = (arg) => {
-    arg.split(" ").join(",");
-    return arg;
+  arg.split(" ").join("%2C");
+  return arg;
 }
 
 var showForm = function (bool) {

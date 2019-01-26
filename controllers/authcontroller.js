@@ -12,8 +12,13 @@ exports.account = function(req, res) {
     res.render('account');
 };
 
-exports.logout = function(req, res) {
-    req.session.destroy(function(err) {
-        res.redirect('/');
+exports.logout = function (req, res, next) {
+    // Get rid of the session token. Then call `logout`; it does no harm.
+    req.logout();
+    req.session.destroy(function (err) {
+        if (err) { return next(err); }
+        res.redirect("/");
+        return res.send({ authenticated: req.isAuthenticated() });
     });
-};
+  };
+
