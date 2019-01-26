@@ -35,11 +35,11 @@ h1 {
   margin: 0 auto;
   color: #f0c202;
   text-align: center;
-  margin-top: 50%;
+  /* margin-top: 50%; */
   text-shadow: 1px 1px 2px black, 0 0 25px black, 0 0 5px black;
 }
 
-h1.setupAccount {
+/* h1.setupAccount {
   font-size: 70px;
   margin: 0 auto;
   color: #f0c202;
@@ -47,13 +47,13 @@ h1.setupAccount {
   margin-top: 30%;
   font-family: 'Courgette', cursive;
   text-shadow: 1px 1px 2px black, 0 0 25px black, 0 0 5px black;
-}
+} */
 
 #buttons {
   text-align: center;
 }
 
-form {
+.frontForm {
   background-color: #f0c202;
   margin: 0 auto;
   margin-top: 5%;
@@ -65,13 +65,13 @@ form {
   border-radius: 10px;
 }
 
-#submit, #cancelButton, #signInCancelButton, #sign{
+#cancelButton, #signInCancelButton, #sign{
   background-color: black;
   border: none;
   margin-right: 10px;
 }
 
-#signIn, #newAccount {
+#signIn, #newAccount{
   background-color: #f0c202;
   border: none;
   color: black;
@@ -81,7 +81,13 @@ form {
   font-size: 20px;
 }
 
-#signIn:hover, #signInButton:hover, #newAccount:hover, #submit:hover, #signInCancelButton:hover, #cancelButton:hover  {
+#search-btn {
+  background-color: #f0c202;
+  color: black;
+  font-size: 20px;
+}
+
+#signIn:hover, #signInButton:hover, #newAccount:hover, #sign:hover, #signInCancelButton:hover, #cancelButton:hover  {
   -moz-transition: all .2s ease-in;
     -o-transition: all .2s ease-in;
     -webkit-transition: all .2s ease-in;
@@ -94,3 +100,11 @@ form {
   display: none;
 }
 
+#allIndex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+}

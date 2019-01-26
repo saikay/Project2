@@ -1,0 +1,65 @@
+<div id="home">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark navigation">
+        <h2 class="navTitle"><a class="navbar-brand" href="/">Fridge Frenzy</a></h2>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav nav-left-overwrite">
+                <li class="nav-item">
+                    <a class="nav-link" href="/favorites">Favorites</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">Sign Out</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <br>
+                <br>
+                <br>
+                <br>
+                <form action="/search" type="GET">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" id="search-bar" name="search" placeholder="Search e.g. strawberry milk ice"
+                            aria-label="Search" aria-describedby="button-addon2">
+                        <div class="input-group-append">
+                            <button class="btn btn-md btn-amber m-0 px-5 py-0 z-depth-0 waves-effect rounded" id="search-btn"
+                                href="/search" type="submit" id="button-addon2"><span class="fa fa-search text-black"></span></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-12 mt-2">
+                <div class="row">
+                    {{#each this}}
+                    <div class="col-md-4 mt-3">
+                        <div class="card animated fadeInDown">
+
+                            <!-- Card image -->
+                            <img class="card-img-top" id="recipe-image" href="" src={{image}} alt="Card image cap">
+
+                            <!-- Card content -->
+                            <div class="card-body">
+
+                                <!-- Title -->
+                                <h4 class="card-title"><a>{{title}}</a></h4>
+                                <!-- Text -->
+                                <!-- Button -->
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>

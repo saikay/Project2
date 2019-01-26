@@ -1,9 +1,5 @@
 
-// Get references to page elements
-var $searchInput = $("#search-bar");
-var $exampleDescription = $("#example-description");
-var $searchButton = $("#search-btn");
-var $exampleList = $("#example-list");
+
 
 // The API object contains methods for each kind of request we'll make
 var API = {
@@ -51,35 +47,59 @@ function showPassword2() {
   }
 }
 
+var queryData = [];
 //Listener for any button click
 hook.button.on("click", function (e) {
-  e.preventDefault();
   var b = $(this);
   //using switch to decide the functionality of each button
   switch (b.attr("id")) {
     case "signIn":
+      e.preventDefault();
       showForm(true);
       break;
     case "newAccount":
+      e.preventDefault();
       showForm(false);
       break;
-    case "sign":
-      if (b.data("form") === 0) {
-        //create account
-      } else {
-        //sign in
-      }
-      break;
     case "cancelButton":
+      e.preventDefault();
       hook.hide(hook.form);
       hook.hide(hook.signInT);
       hook.hide(hook.signUpT);
       hook.show(hook.main);
       break;
-
+    case "search-btn":
+      // e.preventDefault();
+      // const queryString = breakDown($("#search-bar").val().trim());
+      // window.location.href = "/search/?search=" + queryString;
+      // $.ajax({
+      //   url: "/search/" + queryString,
+      //   type: "GET"
+      // }).then(function(data){
+        
+        // $.ajax({
+        //   url: "/search",
+        //   type: "POST",
+        //   data: {
+        //     arr: data
+        //   },
+        //   success: function(data) {
+        //     console.log(data);
+        //   }
+        // })
+      // })
+      break;
   }
 })
 //form showing funciton true = signIn, false = signUp
+
+
+
+const breakDown = (arg) => {
+  arg.split(" ").join("%2C");
+  return arg;
+}
+
 var showForm = function (bool) {
   hook.show(hook.form);
   hook.hide(hook.main);
@@ -88,6 +108,12 @@ var showForm = function (bool) {
     hook.sign
       .html("Sign In")
       .attr("data-form", 1)
+    hook.form
+      .attr({
+        id: "signin",
+        name: "signin",
+        action: "signin"
+      })
     hook.show(hook.signIn);
     hook.show(hook.signInT);
     hook.hide(hook.signUp);
@@ -96,6 +122,12 @@ var showForm = function (bool) {
     hook.sign
       .html("Sign Up")
       .attr("data-form", 0)
+    hook.form
+      .attr({
+        id: "signup",
+        name: "signup",
+        action: "signup"
+      });
     hook.show(hook.signUpT)
     hook.show(hook.signUp);
     hook.hide(hook.signInT);

@@ -11,41 +11,31 @@
           <a class="nav-link" href="/favorites">Favorites</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Sign Out</a>
+          <a class="nav-link" href="/logout">Sign Out</a>
         </li>
       </ul>
     </div>
   </nav>
-<div class="container">
-  <div class="row">
-    <div class="col-8 offset-2">
-      <div id="companyName">
-        <h1 class="favoritesTitle">Welcome!</h1>
-        <form class="clearfix mb-4 createAccount" id="ingredientsForm" action="POST">
 
-          <div class="form-group firstName">
-            <label for="first-name" id="firstNameTitle">What Ingredients Do You Have?</label><br><br>
-            <input type="text" id="ingredientsList" class="form-control" aria-describedby="example-text" placeholder="insert a comma after each ingredient">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <br>
+        <br>
+        <br>
+        <br>
+        <form action="/search" type="GET">
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" id="search-bar" name="search" placeholder="Search e.g. strawberry milk ice"
+              aria-label="Search" aria-describedby="button-addon2">
+            <div class="input-group-append">
+              <button class="btn btn-md btn-amber m-0 px-5 py-0 z-depth-0 waves-effect rounded" id="search-btn" href="/search"
+                type="submit" id="button-addon2"><span class="fa fa-search text-black"></span></button>
+            </div>
           </div>
-          <button id="submit" class="btn btn-primary">Submit</button>
         </form>
       </div>
     </div>
   </div>
 </div>
-
-{{!-- <div class="col-8 offset-2">
-  <ul id="example-list" class="list-group">
-    {{#each examples}}
-    <li data-id="{{this.id}}" class="list-group-item">
-      <a href="example/{{this.id}}">{{this.text}}</a>
-      <button class="btn btn-danger float-right delete">ｘ</button>
-    </li>
-    {{/each}}
-  </ul>
-</div> --}}
-</div>
-
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>

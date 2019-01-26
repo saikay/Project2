@@ -1,18 +1,37 @@
 require("dotenv").config();
 var express = require("express");
-var exphbs = require("express-handlebars");
 var path = require("path");
 var db = require("./models");
-
 var app = express();
+var exphbs = require("express-handlebars");
+var passport = require('passport');
+var session = require("express-session");
+var bodyParser = require('body-parser');
 var PORT = process.env.PORT || 3000;
+
+app.enable('trust proxy');
+//For BodyParser
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+app.use(bodyParser.json());
+
+
 
 // Middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "/public")));
 
-// Handlebars
+// For Passport
+app.use(session({
+  secret: 'keyboard cat',
+  resave: true,
+  saveUninitialized: true
+})); // session secret
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.engine(
   "handlebars",
   exphbs({
@@ -20,12 +39,16 @@ app.engine(
   })
 );
 app.set("view engine", "handlebars");
-
+ 
 // Routes
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
-
 var syncOptions = { force: true };
+var authRoute = require("./routes/auth")(app);
+
+//load passport strategies
+ 
+require('./config/passport/passport.js')(passport, db.user);
 
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`

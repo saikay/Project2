@@ -4,12 +4,14 @@ var Hook = function () {
     this.signUp = $(".signUp");
     this.sign = $("#sign");
     this.button = $("body button");
-    this.first = $("#firstNameInput").val().trim();
-    this.last = $("#lastNameInput").val().trim();
-    this.email = $("#emailInput").val().trim();
-    this.user = $("#userNameInput").val().trim();
-    this.pass = $("#pwInput").val().trim();
-    this.form = $("#newAccountForm");
+    if (document.URL === "/"){
+      this.first = $("#firstNameInput").val().trim();
+      this.last = $("#lastNameInput").val().trim();
+      this.email = $("#emailInput").val().trim();
+      this.user = $("#userNameInput").val().trim();
+      this.pass = $("#pwInput").val().trim();
+    }
+    this.form = $(".newAccountForm");
     this.main = $(".mainView");
     this.signUpT = $("#setupAccountTitle");
     this.signInT = $("#signInTitle");

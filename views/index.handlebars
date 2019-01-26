@@ -1,7 +1,7 @@
 <div id="home">
   <div class="container">
     <div class="row">
-      <div class="col-8 offset-2">
+      <div class="col-8 offset-2" id="allIndex">
         <div class="mainView" id="companyName">
           <h1>Fridge Frenzy</h1>
         </div>
@@ -13,58 +13,46 @@
           <h1 class="setupAccount">Sign In</h1>
         </div>
         <div class="mainView" id="buttons">
-          <button id="signIn" class="btn btn-primary">Sign In</button>
-          <button id="newAccount" class="btn btn-primary">Create Account</button>
+          <button id="signIn" class="btn">Sign In</button>
+          <button id="newAccount" class="btn">Create Account</button>
 
         </div>
         
 
         <!-- Create Account Form -->
-        <form class="clearfix mb-4 hidden" id="newAccountForm" action="POST">
+        <form class="clearfix mb-4 newAccountForm hidden frontForm" id="" method="post">
          
 
           <div class="form-group signUp">
             <label for="first-name" id="firstNameTitle">First Name</label>
-            <input type="text" id="firstNameInput" class="form-control" aria-describedby="example-text" placeholder="John">
+            <input type="text" id="firstNameInput" name="firstname" class="form-control" aria-describedby="example-text" placeholder="John">
           </div>
           <div class="form-group signUp">
             <label for="last-name" id="lastNameTitle">Last Name</label>
-            <input type="text" id="lastNameInput" class="form-control" aria-describedby="example-text" placeholder="Doe">
-          </div>
-          <div class="form-group signUp">
-            <label for="email" id="emailTitle">Email</label>
-            <input type="text" id="emailInput" class="form-control" aria-describedby="example-text" placeholder="email@domain.com">
+            <input type="text" id="lastNameInput" name="lastname" class="form-control" aria-describedby="example-text" placeholder="Doe">
           </div>
           <div class="form-group signIn">
+            <label for="email" id="emailTitle">Email</label>
+            <input type="email" id="emailInput" name="email" class="form-control" aria-describedby="example-text" placeholder="email@domain.com">
+          </div>
+          <div class="form-group signUp">
             <label for="userNameTitle">User Name</label>
-            <input type="text" class="form-control" id="userNameInput" aria-describedby="example-description" placeholder="username">
+            <input type="text" name="username" class="form-control" id="userNameInput" aria-describedby="example-description" placeholder="username">
           </div>
           <div class="form-group signIn">
 
             <label for="password">Password</label>  
-            <input type="password" class="form-control" id="pwInput" aria-describedby="example-description" placeholder="password"><br>
+            <input type="password" name="password" class="form-control" id="pwInput" aria-describedby="example-description" placeholder="password"><br>
             <input type="checkbox" onclick="showPassword()">Show Password
           </div>
 
-          <button id="sign" class="btn btn-primary">Sign Up</button>
-          <button id="cancelButton" class="btn btn-primary">Cancel</button>
+          <button id="sign" type="submit" class="btn">Sign Up</button>
+          <button id="cancelButton" class="btn">Cancel</button>
         </form>
 
-        {{!-- <ul id="example-list" class="list-group">
-          {{#each examples}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
-          </li>
-          {{/each}}
-        </ul> --}}
       </div>
     </div>
   </div>
 </div>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/hook.js"></script>
-<script src="/js/index.js"></script>
-<script src="/js/firebase.js"></script>
-<script src="/js/createQuery.js"></script>
+
