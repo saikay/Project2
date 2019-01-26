@@ -16,8 +16,6 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
-
-
 // Middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
@@ -35,7 +33,15 @@ app.use(passport.session());
 app.engine(
   "handlebars",
   exphbs({
-    defaultLayout: "main"
+    defaultLayout: "main",
+    helpers: {
+      clear: function(value, title, id) {
+        if(value !== undefined){
+          var link = value.replace("-312x231.jpeg", "").replace("-312x231.jpg", "").replace("-312x231.png", "").replace("Images", "s").replace(id, title.replace(/ /g, "-") + "-" + id);
+          return link;
+        }
+      }
+    }
   })
 );
 app.set("view engine", "handlebars");
