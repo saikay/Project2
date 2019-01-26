@@ -42,8 +42,8 @@ module.exports = function (app) {
   });
 
   app.get("/search", function(req, res) {
-    var data = req.query.search;
-    console.log(req.query)
+    var data = req.query.search.replace(/ /g, "%2C");
+    console.log(data)
     console.log("Get route worked again")
     unirest.get("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?number=9&ranking=2&ingredients=" + data)
       .header("X-RapidAPI-Key", process.env.SPOON_KEY)
