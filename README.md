@@ -25,9 +25,13 @@ The user navigates to (URL) and selects sign up or log in if they have already v
   - express: "^4.16.3
   - express-handlebars: ^3.0.0
   - mysql: ^2.16.0
+  - mysql2: ^1.6.4
   - firebase: "^5.8.0
   - mysql2: ^1.6.4
   - sequelize: ^4.42.0
+  - body-parser: ^1.18.3
+  - passport: ^0.4.0
+  - passport-local: ^1.0.0
   
 ## QA Systems Used (dev dependencies)
 - Chai
