@@ -81,19 +81,29 @@ h1 {
   font-size: 20px;
 }
 
-#search-btn {
+.btn-amber {
+  background-color: #f0c202 !important;
+  color: black !important;
+  font-size: 15px !important;
+  text-transform: uppercase;
+  border: none;
+  padding: 10px;
+  margin: 0px;
+}
+
+#search-btn .btn-amber{
   background-color: #f0c202;
   color: black;
   font-size: 20px;
 }
 
-#signIn:hover, #signInButton:hover, #newAccount:hover, #sign:hover, #signInCancelButton:hover, #cancelButton:hover  {
-  -moz-transition: all .2s ease-in;
-    -o-transition: all .2s ease-in;
-    -webkit-transition: all .2s ease-in;
-    transition: all .2s ease-in;
-    background: #c01017; 
-    color: #fff;
+#signIn:hover, #signInButton:hover, #newAccount:hover, #sign:hover, #signInCancelButton:hover, #cancelButton:hover, .btn-amber:hover {
+  -moz-transition: all .2s ease-in !important;
+    -o-transition: all .2s ease-in !important;
+    -webkit-transition: all .2s ease-in !important;
+    transition: all .2s ease-in !important;
+    background: #c01017 !important; 
+    color: #fff !important;
 }
 
 .hidden {
