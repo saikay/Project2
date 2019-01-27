@@ -70,7 +70,18 @@ hook.button.on("click", function (e) {
       hook.hide(hook.signUpT);
       hook.show(hook.main);
       break;
-    case "search-btn":
+    case "favorite-btn":
+      e.preventDefault();
+      var ourDiv = $(this).parent().parent();
+      var ourLink = $("#linkA");
+      var link = ourDiv.find(ourLink).attr("href");
+      var dataObj = {
+        userName: currentUser.UID,
+        recipeName: title,
+        image: image,
+        recipeURL: link,
+        recipeID: id
+      }
       // e.preventDefault();
       // const queryString = breakDown($("#search-bar").val().trim());
       // window.location.href = "/search/?search=" + queryString;
