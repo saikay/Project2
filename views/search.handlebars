@@ -40,19 +40,19 @@
                 <div class="row" id="cardHolder">
                     {{#each this}}
                     <div class="col-md-4 mt-3">
-                        <div class="card animated fadeInUp">
+                        <div class="card animated fadeInUp" id={{id}}>
 
                             <!-- Card image -->
-                            <a href={{#clear image title id}}{{/clear}}><img class="card-img-top" id="recipe-image"  src={{image}} alt="Card image cap"></a>
+                            <a class="link-{{id}}" href={{#clear image title id}}{{/clear}}><img class="card-img-top recipe-image" src={{image}} alt="Card image cap"></a>
 
                             <!-- Card content -->
                             <div class="card-body">
 
                                 <!-- Title -->
-                                <h4 class="card-title"><a>{{title}}</a></h4>
+                                <h4 class="card-title"><a class="title-{{id}}">{{title}}</a></h4>
                                 <!-- Text -->
                                 <!-- Button -->
-                                
+                                 <button class="btn-amber rounded favorite-btn" href="/favorites" type="submit" data-id={{id}}>Add To Favorites</button>
 
                             </div>
 

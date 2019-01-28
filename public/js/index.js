@@ -72,7 +72,19 @@ hook.button.on("click", function (e) {
   }
 })
 //form showing funciton true = signIn, false = signUp
-
+$(".favorite-btn").click(function(e){
+  e.preventDefault();
+      var ourDiv = $(this).parent().parent();
+      var ourLink = $(".linkA");
+      var link = ourDiv.find(ourLink).attr("href");
+      var dataObj = {
+        userName: currentUser.UID,
+        recipeName: title,
+        image: image,
+        recipeURL: link,
+        recipeID: id
+      }
+})
 
 
 const breakDown = (arg) => {
