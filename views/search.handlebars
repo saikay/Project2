@@ -43,7 +43,7 @@
                         <div class="card animated fadeInUp" id={{id}}>
 
                             <!-- Card image -->
-                            <a class="link-{{id}}" href={{#clear image title id}}{{/clear}}><img class="card-img-top recipe-image" src={{image}} alt="Card image cap"></a>
+                            <a class="link-{{id}}" href={{#clear image title id}}{{/clear}}><img class="card-img-top image-{{id}}" src={{image}} alt="Card image cap"></a>
 
                             <!-- Card content -->
                             <div class="card-body">
@@ -52,7 +52,7 @@
                                 <h4 class="card-title"><a class="title-{{id}}">{{title}}</a></h4>
                                 <!-- Text -->
                                 <!-- Button -->
-                                 <button class="btn-amber rounded favorite-btn" href="/favorites" type="submit" data-id={{id}}>Add To Favorites</button>
+                                 <a class="btn-amber rounded favorite-btn" data-id={{id}}>Add To Favorites</a>
 
                             </div>
 

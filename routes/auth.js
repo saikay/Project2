@@ -13,7 +13,7 @@ module.exports = function (app) {
     ));
     
     app.get('/account', isLoggedIn, authController.account);
-
+    
     app.get('/logout', authController.logout);
 
     app.post('/signin', passport.authenticate('local-signin', {

@@ -1,6 +1,7 @@
 var exports = module.exports = {}
  
 exports.signup = function(req, res) {
+    console.log(req.user.username)
     res.render('account');
 };
 
@@ -9,6 +10,7 @@ exports.signin = function(req, res) {
 };
 
 exports.account = function(req, res) {
+    console.log("account working");
     res.render('account');
 };
 

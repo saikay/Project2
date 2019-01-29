@@ -11,6 +11,15 @@ module.exports = function (app) {
     });
   });
 
+  app.get("/api/user/:username", function(req, res){
+    db.user.findAll({
+      where: {
+        username: req.params.username
+      }
+    }).then(function(userData){
+      res.json(userData);
+    })
+  })
   // Add a favorite Recipe
   app.post("/api/favorites", function (req, res) {
 
@@ -29,13 +38,6 @@ module.exports = function (app) {
     });
   });
 
-  // app.get("/search/:search", function (req, res) {
-  //   unirest.get("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?number=5&ranking=2&ingredients=" + req.params.search)
-  //     .header("X-RapidAPI-Key", "0dLFzw4TjNmshzQG9xezksktSXbEp1QtQtdjsnAd8FlOiv9etx")
-  //     .end(function (result) {
-  //       res.send(result);
-  //     });
-  // });
 };
 
 

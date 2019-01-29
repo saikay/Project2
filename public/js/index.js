@@ -2,6 +2,7 @@
 
 
 // The API object contains methods for each kind of request we'll make
+
 var API = {
   search: function ($search) {
     return $.ajax({
@@ -26,6 +27,22 @@ var API = {
     });
   }
 };
+
+function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i <ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
 
 //Show or hide password
 function showPassword() {
@@ -74,18 +91,18 @@ hook.button.on("click", function (e) {
 //form showing funciton true = signIn, false = signUp
 $(".favorite-btn").click(function(e){
   e.preventDefault();
-      var ourDiv = $(this).parent().parent();
-      var ourLink = $(".linkA");
-      var link = ourDiv.find(ourLink).attr("href");
-      var dataObj = {
-        userName: currentUser.UID,
-        recipeName: title,
-        image: image,
-        recipeURL: link,
-        recipeID: id
-      }
+    
+      // var ourDiv = $(this).parent().parent();
+      // var ourLink = $(".linkA");
+      // var link = ourDiv.find(ourLink).attr("href");
+      // var dataObj = {
+      //   userName: currentUser.UID,
+      //   recipeName: title,
+      //   image: image,
+      //   recipeURL: link,
+      //   recipeID: id
+      // }
 })
-
 
 const breakDown = (arg) => {
   arg.replace(/ /g, "%2C");
