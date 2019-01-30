@@ -91,7 +91,24 @@ hook.button.on("click", function (e) {
 //form showing funciton true = signIn, false = signUp
 $(".favorite-btn").click(function(e){
   e.preventDefault();
-    
+    var fId = $(this).data("id");
+    var user = $(".userName").data("user");
+    var link = $(`.link-${fId}`).attr("href");
+    var image = $(`.image-${fId}`).attr("src");
+    var title = $(`.title-${fId}`).html();
+    var data = {
+      userName: user,
+      recipeName: title,
+      image: image,
+      recipeURL: link,
+      recipeID: fId
+    };
+
+    $.ajax({
+      url: "api/favorites",
+      type: "POST",
+      data: data
+    });
       // var ourDiv = $(this).parent().parent();
       // var ourLink = $(".linkA");
       // var link = ourDiv.find(ourLink).attr("href");
@@ -177,7 +194,7 @@ var refreshIngredients = function () {
 var handleFormSubmit = function (event) {
   event.preventDefault();
 
-  var search = {
+  var favorite = {
     foodName: $searchInput.val().trim(),
     searchScore: search.searchScore + 1
   };

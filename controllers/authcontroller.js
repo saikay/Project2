@@ -1,7 +1,7 @@
 var exports = module.exports = {}
  
 exports.signup = function(req, res) {
-    console.log(req.user.username)
+    console.log(req.user.username);
     res.render('account');
 };
 
