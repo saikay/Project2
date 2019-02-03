@@ -1,5 +1,5 @@
 //Contructor lets us easily access ids and classes
-var Hook = function () {
+let Hook = function () {
     this.signIn = $(".signIn");
     this.signUp = $(".signUp");
     this.sign = $("#sign");
@@ -27,4 +27,4 @@ var Hook = function () {
     return this;
   };
   //Initialize constructor
-  var hook = new Hook();
+  let hook = new Hook();

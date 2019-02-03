@@ -1,52 +1,7 @@
 
-
-
-// The API object contains methods for each kind of request we'll make
-
-var API = {
-  search: function ($search) {
-    return $.ajax({
-      headers: {
-        "Content-Type": "application/json"
-      },
-      type: "POST",
-      url: "api/ingredients",
-      data: JSON.stringify($search)
-    });
-  },
-  getIngredient: function () {
-    return $.ajax({
-      url: "api/ingredients",
-      type: "GET"
-    });
-  },
-  deleteIngredient: function (id) {
-    return $.ajax({
-      url: "api/ingredients/" + id,
-      type: "DELETE"
-    });
-  }
-};
-
-function getCookie(cname) {
-  var name = cname + "=";
-  var decodedCookie = decodeURIComponent(document.cookie);
-  var ca = decodedCookie.split(';');
-  for(var i = 0; i <ca.length; i++) {
-    var c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return "";
-}
-
 //Show or hide password
-function showPassword() {
-  var x = document.getElementById("pwInput");
+const showPassword = () => {
+  const x = document.getElementById("pwInput");
   if (x.type === "password") {
     x.type = "text";
   } else {
@@ -55,8 +10,8 @@ function showPassword() {
 }
 
 
-function showPassword2() {
-  var x = document.getElementById("pwResult");
+const showPassword2 = () => {
+  const x = document.getElementById("pwResult");
   if (x.type === "password") {
     x.type = "text";
   } else {
@@ -65,10 +20,10 @@ function showPassword2() {
 }
 
 
-var queryData = [];
+let queryData = [];
 //Listener for any button click
-hook.button.on("click", function (e) {
-  var b = $(this);
+hook.button.on("click", function(e){
+  let b = $(this);
   //using switch to decide the functionality of each button
   switch (b.attr("id")) {
     case "signIn":
@@ -89,14 +44,14 @@ hook.button.on("click", function (e) {
   }
 })
 //form showing funciton true = signIn, false = signUp
-$(".favorite-btn").click(function(e){
+$(".favorite-btn").click(function (e){
   e.preventDefault();
-    var fId = $(this).data("id");
-    var user = $(".userName").data("user");
-    var link = $(`.link-${fId}`).attr("href");
-    var image = $(`.image-${fId}`).attr("src");
-    var title = $(`.title-${fId}`).html();
-    var data = {
+    let fId = $(this).data("id");
+    let user = $(".userName").data("user");
+    let link = $(`.link-${fId}`).attr("href");
+    let image = $(`.image-${fId}`).attr("src");
+    let title = $(`.title-${fId}`).html();
+    let data = {
       userName: user,
       recipeName: title,
       image: image,
@@ -116,7 +71,7 @@ const breakDown = (arg) => {
   return arg;
 }
 
-var showForm = function (bool) {
+const showForm = (bool) => {
   hook.show(hook.form);
   hook.hide(hook.main);
 
@@ -149,69 +104,3 @@ var showForm = function (bool) {
     hook.hide(hook.signInT);
   }
 };
-
-// refreshExamples gets new examples from the db and repopulates the list
-var refreshIngredients = function () {
-  API.getIngredient().then(function (data) {
-    var $ingredient = data.map(function (ingredient) {
-      var $a = $("<a>")
-        .text(ingredient.foodName)
-        .attr("href", "/ingredient/" + ingredient.id);
-
-      var $li = $("<li>")
-        .attr({
-          class: "list-group-item",
-          "data-id": ingredient.id
-        })
-        .append($a);
-
-      var $button = $("<button>")
-        .addClass("btn btn-danger float-right delete")
-        .text("ｘ");
-
-      $li.append($button);
-
-      return $li;
-    });
-
-    $ingredientList.empty();
-    $ingredientList.append($ingredient);
-  });
-};
-
-// handleFormSubmit is called whenever we submit a new example
-// Save the new example to the db and refresh the list
-var handleFormSubmit = function (event) {
-  event.preventDefault();
-
-  var favorite = {
-    foodName: $searchInput.val().trim(),
-    searchScore: search.searchScore + 1
-  };
-
-  if (!search.foodName) {
-    alert("You must enter a search parameter!");
-    return;
-  }
-
-  API.saveFavorite(search).then(function () {
-    refreshExamples();
-  });
-
-  $exampleText.val("");
-  $exampleDescription.val("");
-};
-
-// handleDeleteBtnClick is called when an example's delete button is clicked
-// Remove the example from the db and refresh the list
-var handleDeleteBtnClick = function () {
-  var idToDelete = $(this)
-    .parent()
-    .attr("data-id");
-
-  API.deleteExample(idToDelete).then(function () {
-    refreshIngredients();
-  });
-};
-
-// Add event listeners to the submit and delete buttons

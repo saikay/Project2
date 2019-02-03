@@ -1,6 +1,6 @@
-var authController = require('../controllers/authcontroller.js');
-var passport = require('passport');
-var session = require("express-session");
+const authController = require('../controllers/authcontroller.js');
+const passport = require('passport');
+const session = require("express-session");
 
 module.exports = function (app) {
     app.get('/signup', authController.signup);
