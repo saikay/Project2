@@ -1,5 +1,6 @@
 var authController = require('../controllers/authcontroller.js');
 var passport = require('passport');
+var session = require("express-session");
 
 module.exports = function (app) {
     app.get('/signup', authController.signup);
@@ -13,7 +14,7 @@ module.exports = function (app) {
     ));
     
     app.get('/account', isLoggedIn, authController.account);
-
+    
     app.get('/logout', authController.logout);
 
     app.post('/signin', passport.authenticate('local-signin', {

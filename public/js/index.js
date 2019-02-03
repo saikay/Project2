@@ -2,6 +2,7 @@
 
 
 // The API object contains methods for each kind of request we'll make
+
 var API = {
   search: function ($search) {
     return $.ajax({
@@ -27,6 +28,22 @@ var API = {
   }
 };
 
+function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i <ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
 //Show or hide password
 function showPassword() {
   var x = document.getElementById("pwInput");
@@ -46,7 +63,6 @@ function showPassword2() {
     x.type = "password";
   }
 }
-
 
 
 var queryData = [];
@@ -70,35 +86,33 @@ hook.button.on("click", function (e) {
       hook.hide(hook.signUpT);
       hook.show(hook.main);
       break;
-    case "search-btn":
-      // e.preventDefault();
-      // const queryString = breakDown($("#search-bar").val().trim());
-      // window.location.href = "/search/?search=" + queryString;
-      // $.ajax({
-      //   url: "/search/" + queryString,
-      //   type: "GET"
-      // }).then(function(data){
-        
-        // $.ajax({
-        //   url: "/search",
-        //   type: "POST",
-        //   data: {
-        //     arr: data
-        //   },
-        //   success: function(data) {
-        //     console.log(data);
-        //   }
-        // })
-      // })
-      break;
   }
 })
 //form showing funciton true = signIn, false = signUp
+$(".favorite-btn").click(function(e){
+  e.preventDefault();
+    var fId = $(this).data("id");
+    var user = $(".userName").data("user");
+    var link = $(`.link-${fId}`).attr("href");
+    var image = $(`.image-${fId}`).attr("src");
+    var title = $(`.title-${fId}`).html();
+    var data = {
+      userName: user,
+      recipeName: title,
+      image: image,
+      recipeURL: link,
+      recipeID: fId
+    };
 
-
+    $.ajax({
+      url: "api/favorites",
+      type: "POST",
+      data: data
+    });
+})
 
 const breakDown = (arg) => {
-  arg.split(" ").join("%2C");
+  arg.replace(/ /g, "%2C");
   return arg;
 }
 
@@ -170,7 +184,7 @@ var refreshIngredients = function () {
 var handleFormSubmit = function (event) {
   event.preventDefault();
 
-  var search = {
+  var favorite = {
     foodName: $searchInput.val().trim(),
     searchScore: search.searchScore + 1
   };
@@ -180,7 +194,7 @@ var handleFormSubmit = function (event) {
     return;
   }
 
-  API.saveExample(example).then(function () {
+  API.saveFavorite(search).then(function () {
     refreshExamples();
   });
 
@@ -201,5 +215,3 @@ var handleDeleteBtnClick = function () {
 };
 
 // Add event listeners to the submit and delete buttons
-// $submitBtn.on("click", handleFormSubmit);
-// $exampleList.on("click", ".delete", handleDeleteBtnClick);

@@ -1,4 +1,4 @@
-# Food Frenzy
+# [Food Frenzy][6]
 ## Food Fix for a Frowny Fridge™
 By: Casey Shore, Joshua Moore, Glory Avina, Case Griffiths (The Trash Pandas)
 
@@ -8,9 +8,25 @@ This project uses API calls and a login system to push data to a SQL database an
 ## Description
 The user navigates to (URL) and selects sign up or log in if they have already visited the site.
 
-## Sample
-(gif of working app goes here)
+## Setup
+1. Clone this repository
+    * [Clone link][1]
+2. Navigate to clone directory and use command 'npm i'
+3. Create a local .env using .env.example as a template
+    * Get a rapid api key or mashape key for [Spoonacular][2]
+    * For deployment on [Heroku][3] use [JawsDB][4]
+4. To run the app localy use 'test' build in models/index.js
+    * Run the local server with command 'npm start'
 
+[1]: https://github.com/the-trash-pandas/Project2.git "Git Clone"
+[2]: https://spoonacular.com/food-api "Spoonacular"
+[3]: https://heroku.com "Heroku"
+[4]: https://elements.heroku.com/addons/jawsdb "Jaws DB"
+## Sample
+[Watch an example video][5]
+
+[5]: https://drive.google.com/file/d/1lrLSvskFcPiJHQ-DgFLTRwCWC60fMlm8/view "Fridge Frenzy Example"
+[6]: https://damp-ocean-47767.herokuapp.com/ "Fridge Frenzy Deployed"
 ## Technologies Used
 - HTML
 - CSS
@@ -19,19 +35,6 @@ The user navigates to (URL) and selects sign up or log in if they have already v
 - MySQL for database structure
 - Node
 - Handlebars
-
-## Node Packages Used
-  - dotenv: ^6.2.0
-  - express: "^4.16.3
-  - express-handlebars: ^3.0.0
-  - mysql: ^2.16.0
-  - mysql2: ^1.6.4
-  - firebase: "^5.8.0
-  - mysql2: ^1.6.4
-  - sequelize: ^4.42.0
-  - body-parser: ^1.18.3
-  - passport: ^0.4.0
-  - passport-local: ^1.0.0
   
 ## QA Systems Used (dev dependencies)
 - Chai

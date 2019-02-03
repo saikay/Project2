@@ -7,6 +7,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav nav-left-overwrite">
+                <li class="nav-item">
+                    <a class="nav-link disabled">Welcome {{user}}!</a>
+                </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="/account">Account</a>
                 </li>
@@ -22,6 +25,30 @@
                 <div id="companyName">
                     <h1 class="favoritesTitle">Favorites</h1>
                 </div>
+            </div>
+        </div>
+        <div class="row">
+                {{#each data}}
+                    <div class="col-md-4 mt-3">
+                        <div class="card animated fadeInUp" id={{id}}>
+
+                            <!-- Card image -->
+                            <a class="link-{{recipeID}}" href={{#clear image recipeName recipeID}}{{/clear}}><img class="card-img-top image-{{recipeID}}" src={{image}} alt="Card image cap"></a>
+
+                            <!-- Card content -->
+                            <div class="card-body">
+
+                                <!-- Title -->
+                                <h4 class="card-title"><a class="title-{{recipeID}}">{{recipeName}}</a></h4>
+                                <!-- Text -->
+                                <!-- Button -->
+                                 <a class="btn-amber rounded favorite-btn" data-id={{recipeID}}>Remove</a>
+
+                            </div>
+
+                        </div>
+                    </div>
+                {{/each}}
             </div>
         </div>
     </div>

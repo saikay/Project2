@@ -8,6 +8,9 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav nav-left-overwrite">
                 <li class="nav-item">
+                    <a class="nav-link userName disabled" data-user={{user}}>{{username}}</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="/favorites">Favorites</a>
                 </li>
                 <li class="nav-item">
@@ -37,23 +40,22 @@
                 </form>
             </div>
             <div class="col-md-12 mt-2">
-                <div class="row">
-                    {{#each this}}
+                <div class="row" id="cardHolder">
+                    {{#each data}}
                     <div class="col-md-4 mt-3">
-                        <div class="card animated fadeInDown">
+                        <div class="card animated fadeInUp" id={{id}}>
 
                             <!-- Card image -->
-                            <a href={{#clear image title id}}{{/clear}}><img class="card-img-top" id="recipe-image"  src={{image}} alt="Card image cap"></a>
+                            <a class="link-{{id}}" href={{#clear image title id}}{{/clear}}><img class="card-img-top image-{{id}}" src={{image}} alt="Card image cap"></a>
 
                             <!-- Card content -->
                             <div class="card-body">
 
                                 <!-- Title -->
-                                <h4 class="card-title"><a>{{title}}</a></h4>
+                                <h4 class="card-title"><a class="title-{{id}}">{{title}}</a></h4>
                                 <!-- Text -->
                                 <!-- Button -->
-                                 <button class="btn-amber rounded" id="favorite-btn"
-                                href="/favorites" type="submit" id="button-addon2">Add To Favorites</button>
+                                 <a class="btn-amber rounded favorite-btn" data-id={{id}}>Add To Favorites</a>
 
                             </div>
 
@@ -64,3 +66,4 @@
             </div>
         </div>
     </div>
+
