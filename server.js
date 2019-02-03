@@ -1,13 +1,13 @@
 require("dotenv").config();
-var express = require("express");
-var path = require("path");
-var db = require("./models");
-var app = express();
-var exphbs = require("express-handlebars");
-var passport = require('passport');
-var session = require("express-session");
-var bodyParser = require('body-parser');
-var PORT = process.env.PORT || 3000;
+const express = require("express");
+const path = require("path");
+const db = require("./models");
+const app = express();
+const exphbs = require("express-handlebars");
+const passport = require('passport');
+const session = require("express-session");
+const bodyParser = require('body-parser');
+const PORT = process.env.PORT || 3000;
 
 app.enable('trust proxy');
 //For BodyParser
@@ -37,7 +37,7 @@ app.engine(
     helpers: {
       clear: function(value, title, id) {
         if(value !== undefined){
-          var link = value.replace("-312x231.jpeg", "").replace("-312x231.jpg", "").replace("-312x231.png", "").replace("Images", "s").replace(id, title.replace(/ /g, "-") + "-" + id);
+          let link = value.replace("-312x231.jpeg", "").replace("-312x231.jpg", "").replace("-312x231.png", "").replace("Images", "s").replace(id, title.replace(/ /g, "-") + "-" + id);
           return link;
         }
       }
@@ -49,8 +49,8 @@ app.set("view engine", "handlebars");
 // Routes
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
-var syncOptions = { force: true };
-var authRoute = require("./routes/auth")(app);
+const syncOptions = { force: true };
+const authRoute = require("./routes/auth")(app);
 
 //load passport strategies
  
