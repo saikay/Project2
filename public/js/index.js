@@ -109,16 +109,6 @@ $(".favorite-btn").click(function(e){
       type: "POST",
       data: data
     });
-      // var ourDiv = $(this).parent().parent();
-      // var ourLink = $(".linkA");
-      // var link = ourDiv.find(ourLink).attr("href");
-      // var dataObj = {
-      //   userName: currentUser.UID,
-      //   recipeName: title,
-      //   image: image,
-      //   recipeURL: link,
-      //   recipeID: id
-      // }
 })
 
 const breakDown = (arg) => {
@@ -225,5 +215,3 @@ var handleDeleteBtnClick = function () {
 };
 
 // Add event listeners to the submit and delete buttons
-// $submitBtn.on("click", handleFormSubmit);
-// $exampleList.on("click", ".delete", handleDeleteBtnClick);

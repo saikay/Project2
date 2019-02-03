@@ -4,12 +4,8 @@
     "dialect": "mysql"
   },
   "test": {
-    "username": "root",
-    "password": "password",
-    "database": "recipe_db",
-    "host": "localhost",
-    "dialect": "mysql",
-    "logging": false
+    "use_env_variable": "LOCAL_URL",
+    "dialect": "mysql"
   },
   "production": {
     "use_env_variable": "JAWSDB_URL",

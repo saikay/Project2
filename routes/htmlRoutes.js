@@ -6,7 +6,6 @@ var session = require("express-session");
 module.exports = function (app) {
   // Load index page
   app.get("/", function (req, res) {
-    // console.log(db);
     db.Favorite.findAll({}).then(function (dbRecipes) {
       res.render("index", {
         msg: "Welcome!",
@@ -35,15 +34,7 @@ module.exports = function (app) {
     });
   });
 
-  // app.get("/account", function (req, res) {
-  //   // console.log(db);
-  //   db.Favorite.findAll({}).then(function (dbRecipes) {
-  //     res.render("account");
-  //   });
-  // });
-
   app.get("/favorites", function (req, res) {
-    // console.log(db);
     var uid = req.session.passport.user;
     db.user.findOne({
       where: {
@@ -66,19 +57,14 @@ module.exports = function (app) {
   app.get("/search", function(req, res) {
     var data = req.query.search.replace(/ /g, "%2C");
     var uid = req.session.passport.user;
-    console.log(uid);
-    console.log(data)
-    console.log("Get route worked again")
     unirest.get("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?number=9&ranking=2&ingredients=" + data)
       .header("X-RapidAPI-Key", process.env.SPOON_KEY)
       .end(function (result) {
-        console.log(result.body)
         db.user.findOne({
           where: {
             id: uid
           }
         }).then(function(user){
-          console.log(user.id)
           res.render("search", {
             data: result.body,
             user: user.username,
