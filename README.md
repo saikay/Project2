@@ -6,7 +6,7 @@ By: Casey Shore, Joshua Moore, Glory Avina, Case Griffiths (The Trash Pandas)
 This project uses API calls and a login system to push data to a SQL database and provide end users with the ability to search for food recipies based on what is in their fridge at any given time. For example, if a user only has cheese and potatos in their fridge, the recipie finder will search out and pull back baked cheese potatoes.
 
 ## Description
-The user navigates to (URL) and selects sign up or log in if they have already visited the site.
+The user navigates to [Food Frenzy][6] and selects sign up or log in if they have already visited the site.
 
 ## Setup
 1. Clone this repository
