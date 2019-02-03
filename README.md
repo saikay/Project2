@@ -1,4 +1,4 @@
-# Food Frenzy
+# [Food Frenzy][6]
 ## Food Fix for a Frowny Fridge™
 By: Casey Shore, Joshua Moore, Glory Avina, Case Griffiths (The Trash Pandas)
 
@@ -26,7 +26,7 @@ The user navigates to (URL) and selects sign up or log in if they have already v
 [Watch an example video][5]
 
 [5]: https://drive.google.com/file/d/1lrLSvskFcPiJHQ-DgFLTRwCWC60fMlm8/view "Fridge Frenzy Example"
-
+[6]: https://damp-ocean-47767.herokuapp.com/ "Fridge Frenzy Deployed"
 ## Technologies Used
 - HTML
 - CSS
