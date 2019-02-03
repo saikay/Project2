@@ -23,7 +23,9 @@ The user navigates to (URL) and selects sign up or log in if they have already v
 [3]: https://heroku.com "Heroku"
 [4]: https://elements.heroku.com/addons/jawsdb "Jaws DB"
 ## Sample
-<iframe src="https://drive.google.com/file/d/1lrLSvskFcPiJHQ-DgFLTRwCWC60fMlm8/preview" width="640" height="480"></iframe>
+[Watch an example video][5]
+
+[5]: https://drive.google.com/file/d/1lrLSvskFcPiJHQ-DgFLTRwCWC60fMlm8/view "Fridge Frenzy Example"
 
 ## Technologies Used
 - HTML
